@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝老公旗开得胜</title>
+    <script>
+        
+            function randomInt(max){
+                return Math.floor(Math.random() *max)+1;
+            }
+            function jackpoint(){
+                var oArr1 = [];
+                var oArr2 = [];
+                var Base = 5;
+                var Special = 2;
+                for(i=0;i<Base;i++){
+                     var temp = randomInt(50);
+                     for(j=0;j<oArr1.length;j++){
+                         if(temp == oArr1[j]){
+                            temp = randomInt(50);
+                            
+                         }
+                     }
+                     
+                     oArr1.push(temp);
+                     oArr1.sort();
+                }
+
+                for(i=0;i<Special;i++){
+                     var temp = randomInt(10);
+                     for(j=0;j<oArr2.length;j++){
+                         if(temp == oArr2[j]){
+                            temp = randomInt(10);
+                         }
+                     }
+                     
+                     oArr2.push(temp);
+                     oArr2.sort();
+                }
+
+                var oArr = oArr1.concat("+").concat(oArr2);
+                console.log("你好范");
+                
+                document.getElementById("numbers").innerHTML = oArr;
+            }
+        
+    </script>
+</head>
+<body>
+    <div>
+        <h1>如何成为百万富翁</h1>
+        <button onclick = "jackpoint()">点击自动选号</button>
+        <p id="numbers"></p>
+    </div>
+</body>
+</html>
